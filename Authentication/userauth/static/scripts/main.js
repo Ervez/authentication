@@ -24,4 +24,4 @@ function accBoxMouseListener() {
             accountBox.removeClass("show");
         }, 150);
     });
-}
+} 
