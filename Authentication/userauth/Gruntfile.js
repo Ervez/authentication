@@ -8,6 +8,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'static/css/userauth.css': 'static/less/userauth.less',
+                    'static/css/login.register.css': 'static/less/login.register.less',
                 }
             }
         },
@@ -26,3 +27,4 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['less', 'watch']);
 
 };
+

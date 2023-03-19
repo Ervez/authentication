@@ -34,11 +34,15 @@ body div.container nav.navBar div.navBarItems div.navBarItem {
   gap: 10px;
   z-index: 10;
 }
+body div.container div.containerItems {
+  margin-top: 50px;
+}
 body div.account {
   position: absolute;
   flex-direction: column;
   visibility: hidden;
-  z-index: 5;
+  z-index: 10;
+  background-color: #fff;
 }
 body div.account span.triangle-up {
   color: #fff;

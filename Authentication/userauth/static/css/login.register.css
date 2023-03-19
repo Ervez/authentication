@@ -1,0 +1,6 @@
+body div.containerItems form div.loginFormMain {
+  flex-direction: column;
+}
+body div.containerItems form div.loginFormMain div.loginFormHeader h1 {
+  font-size: 20px;
+}
