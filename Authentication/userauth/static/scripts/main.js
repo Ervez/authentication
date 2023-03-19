@@ -1,17 +1,27 @@
+
+
 $(document).ready(function() {
-    let anim = true;
-    $('.contentAnswers button').each(function() {
+    $('.navBarItem').each(function() {
         $(this).on('click', function(e) {
-            if (anim == true)
-                $(this).addClass("scale-out-center");
-                anim = false;
+            var top = $(this).offset().top;
+            var left = $(this).offset().left;
+            if (this.dataset.trigger == "account"){
+                let accountBox = $('.account');
+                $(accountBox).offset({ top : top + 12,  left: left - 30});
+                $(accountBox).toggleClass("show");
+                accBoxMouseListener();
+            }
         });
     });
 
-    setTimeout(() => {
-        $('.homePageInfo').addClass('slide-in-bck-center');
+    
+});
+
+function accBoxMouseListener() {
+    let accountBox = $('.account');
+    $( accountBox ).mouseleave(function() {
         setTimeout(() => {
-            $('.quizStart').addClass('wobble-hor-bottom');
-        }, 500);
-    }, 1000);
-})
+            accountBox.removeClass("show");
+        }, 150);
+    });
+}

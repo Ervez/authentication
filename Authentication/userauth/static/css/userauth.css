@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body div.container {
+  width: 70%;
+  margin: auto;
+}
+body div.container nav.navBar {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+body div.container nav.navBar div.navBarLogo a.logo {
+  gap: 10px;
+  text-decoration: none;
+  color: #000;
+}
+body div.container nav.navBar div.navBarItems {
+  gap: 15px;
+}
+body div.container nav.navBar div.navBarItems div.navBarItem {
+  cursor: pointer;
+  gap: 10px;
+  z-index: 10;
+}
+body div.account {
+  position: absolute;
+  flex-direction: column;
+  visibility: hidden;
+  z-index: 5;
+}
+body div.account span.triangle-up {
+  color: #fff;
+  text-shadow: 0 0 0 #000000;
+  font-size: 35px;
+  position: relative;
+  bottom: -9px;
+}
+body div.account div.accountItems {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  gap: 15px;
+  width: 200px;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 8px;
+}
+body .flexCentered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .show {
+  visibility: visible !important;
+}
