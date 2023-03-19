@@ -10,5 +10,5 @@ def SignupPage(request):
 
 
 def LoginPage(request):
-    pass
+    return render(request, 'userauth/home.html')
 
