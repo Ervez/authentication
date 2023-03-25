@@ -118,6 +118,7 @@ body div.containerItems div.registerFormMainContainer div.registerLeft form.regi
   background-color: #fff;
   padding: 0 4px;
   opacity: 0.5;
+  border-radius: 8px;
 }
 body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper input {
   padding: 0 10px;

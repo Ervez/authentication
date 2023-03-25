@@ -38,7 +38,11 @@
                 <div class="navBarItems flexCentered">
                     <div class="navBarItem flexCentered" data-trigger="account" >
                         <img src="{% static 'images/icon-account-blue.png' %}" width="32" height="32">
+                        {% if user.is_authenticated %}
+                        <span>{{ user.email }}</span>
+                        {% else %}
                         <span>Konto klienta</span>
+                        {% endif %}
                     </div>
                 </div>
             </nav>
