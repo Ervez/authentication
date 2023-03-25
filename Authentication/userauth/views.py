@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.shortcuts import redirect
 from .forms import RegisterUserForm
+
 
 def HomePage(request):
     return render(request, 'userauth/home.html')
@@ -27,4 +28,19 @@ def SignupPage(request):
 
 
 def LoginPage(request):
+    if request.method == "POST":
+        username = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect(HomePage)
+        else:
+            return redirect(LoginPage)
+
     return render(request, 'userauth/login.html')
+
+
+def UserLogout(request):
+    logout(request)
+    return redirect(HomePage)

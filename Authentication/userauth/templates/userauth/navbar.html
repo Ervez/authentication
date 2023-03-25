@@ -21,8 +21,13 @@
         <div class="account flexCentered">
             <span class="triangle-up">&#9650;</span>
             <div class="accountItems flexCentered">
+                {% if user.is_authenticated %}
+                <p>Welcome {{ user.username }} !!!</p>       
+                <a href="{% url 'UserLogout' %}" class="blueButton registerButton">Wyloguj się</a>
+                {% else %}
                 <a href="{% url 'LoginPage' %}" class="blueButton loginButton">Zaloguj się</a>
                 <a href="{% url 'SignupPage' %}" class="blueButton registerButton">Zarejestruj się</a>
+                {% endif %}
             </div>
         </div>
         <div class="container flexCentered">
