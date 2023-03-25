@@ -1,3 +1,94 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+*:focus {
+  outline: none;
+}
+body div.container {
+  width: 70%;
+  margin: auto;
+  flex-direction: column;
+}
+body div.container nav.navBar {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+body div.container nav.navBar div.navBarLogo a.logo {
+  gap: 10px;
+  text-decoration: none;
+  color: #000;
+}
+body div.container nav.navBar div.navBarItems {
+  gap: 15px;
+}
+body div.container nav.navBar div.navBarItems div.navBarItem {
+  cursor: pointer;
+  gap: 10px;
+  z-index: 10;
+}
+body div.container div.containerItems {
+  margin-top: 50px;
+}
+body div.account {
+  position: absolute;
+  flex-direction: column;
+  visibility: hidden;
+  z-index: 10;
+  background-color: #fff;
+}
+body div.account span.triangle-up {
+  color: #fff;
+  text-shadow: 0 0 0 #000000;
+  font-size: 35px;
+  position: relative;
+  bottom: -15px;
+}
+body div.account div.accountItems {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  gap: 15px;
+  width: 225px;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 8px;
+}
+body div.account div.accountItems a {
+  text-decoration: none;
+}
+body div.account div.accountItems a.blueButton {
+  border-radius: 8px;
+  font-size: 18px;
+  width: 180px;
+  text-align: center;
+  padding: 7px 0;
+}
+body div.account div.accountItems a.blueButton.loginButton {
+  color: #fff;
+  background-color: #0a73f5;
+}
+body div.account div.accountItems a.blueButton.registerButton {
+  color: #0a73f5;
+  background-color: #fff;
+  border: 1px solid #0a73f5;
+}
+body .flexCentered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .show {
+  visibility: visible !important;
+}
 body div.containerItems {
   width: 100%;
 }
@@ -20,12 +111,61 @@ body div.containerItems div.registerFormMainContainer div.registerLeft form.regi
   padding: 10px;
   width: 90%;
 }
+body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper label {
+  position: absolute;
+  margin-top: 9px;
+  margin-left: 10px;
+  background-color: #fff;
+  padding: 0 4px;
+  opacity: 0.5;
+  z-index: 3;
+}
 body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper input {
-  padding: 5px;
+  padding: 0 10px;
   border-radius: 8px;
   height: 40px;
   border: 1px solid gray;
   width: 90%;
+  z-index: 10;
+}
+body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper .labelOnFocus {
+  animation-name: labelFormAnimation;
+  animation-duration: 0.5s;
+  margin-top: -13px;
+  opacity: 1;
+}
+@keyframes labelFormAnimation {
+  from {
+    margin-top: 9px;
+    opacity: 0.5;
+  }
+  to {
+    margin-top: -13px;
+    opacity: 1;
+  }
+}
+@keyframes labelFormAnimOff {
+  from {
+    margin-top: -13px;
+    opacity: 1;
+  }
+  to {
+    margin-top: 9px;
+    opacity: 0.5;
+  }
+}
+body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper .labelNoFocus {
+  animation-name: labelFormAnimOff;
+  animation-duration: 0.5s;
+  margin-top: 9px;
+  opacity: 0.5;
+}
+body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper input[type=submit] {
+  cursor: pointer;
+  background: #0a73f5;
+  font-weight: 600;
+  color: #fff;
+  border: none;
 }
 body div.containerItems div.registerFormMainContainer div.registerRight {
   width: 40%;

@@ -1,6 +1,12 @@
 
 
 $(document).ready(function() {
+bindAccountMenuBox();
+bindInputRegisterForm();
+    
+});
+
+function bindAccountMenuBox(){
     $('.navBarItem').each(function() {
         $(this).on('click', function(e) {
             var top = $(this).offset().top;
@@ -13,9 +19,7 @@ $(document).ready(function() {
             }
         });
     });
-
-    
-});
+}
 
 function accBoxMouseListener() {
     let accountBox = $('.account');
@@ -25,3 +29,19 @@ function accBoxMouseListener() {
         }, 150);
     });
 } 
+
+function bindInputRegisterForm(){
+    $( ".registerForm .fieldWrapper input" ).each(function() {
+        $(this).on('click', function(){
+            $(this).closest('.fieldWrapper').children('label').addClass( "labelOnFocus" );
+            $(this).closest('.fieldWrapper').children('label').removeClass("labelNoFocus");
+                $(this).focusout(function(){
+                    if(!$(this).val()){
+                        $(this).closest('.fieldWrapper').children('label').addClass( "labelNoFocus" );
+                        $(this).closest('.fieldWrapper').children('label').removeClass("labelOnFocus");
+                    }
+                });
+
+        });
+      });
+}
