@@ -118,7 +118,6 @@ body div.containerItems div.registerFormMainContainer div.registerLeft form.regi
   background-color: #fff;
   padding: 0 4px;
   opacity: 0.5;
-  z-index: 3;
 }
 body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper input {
   padding: 0 10px;
@@ -126,7 +125,6 @@ body div.containerItems div.registerFormMainContainer div.registerLeft form.regi
   height: 40px;
   border: 1px solid gray;
   width: 90%;
-  z-index: 10;
 }
 body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper .labelOnFocus {
   animation-name: labelFormAnimation;
