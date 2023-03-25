@@ -1,29 +1,59 @@
 
 body{
     div.containerItems{
-        form{
-            div.loginFormMain{
-                    flex-direction: column;
-                    div.loginFormHeader{
-                        h1{
-                            font-size: 20px
+        width: 100%;
+        div.registerFormMainContainer{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            div.registerLeft{
+                width: 40%;
+                display: flex;
+                form{
+                    width: 100%;
+                    &.registerForm{
+                        div.fieldWrapper{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            padding: 10px;
+                            width: 90%;
+                            input{
+                                padding: 5px;
+                                border-radius: 8px;
+                                height: 40px;
+                                border: 1px solid gray;
+                                width: 90%;
+                            }
+                        }
+        
+                        input[type=submit]{
                         }
                     }
+                }
             }
+            div.registerRight{
+                width: 40%;
+                display: flex;
+                align-items: center;
+                div.whyRegister{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
 
-            div.registerFormMain{
-                div.registerFormItems{
-                    div.registerFormItem{
+                    div.whyRegisterItems{
                         display: flex;
-                        padding: 10px;
-                        align-items: center;
-                        label{
+                        flex-direction: column;
+                        width: 100%;
+                        div.whyRegisterRow{
                             display: flex;
-                            width: 125px;
-                        }
-                        input{
-                            height: 40px;
-                            padding: 5px;
+                            justify-content: space-between;
+                            div.whyRegisteritem{
+                                width: 50%;
+                                display: flex;
+                                justify-content: center;
+                                padding: 25px;
+                            }
                         }
                     }
                 }

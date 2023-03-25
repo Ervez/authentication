@@ -2,20 +2,76 @@
 {% block content %}
 {% load static %}
 
-{% if form.errors %}
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Hej!</strong> Wygląda na to, że są błędy w formularzu!
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+<div class="registerFormMainContainer">
+    <div class="registerLeft">
+        {% if form.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Hej!</strong> Wygląda na to, że są błędy w formularzu!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        
+        {% endif %}
+        
+        <form action="{% url 'SignupPage' %}" method="POST" class="registerForm">
+            {% csrf_token %}
+            <div class="fieldWrapper">
+                {{ form.username.errors }}
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.email.errors }}
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.first_name.errors }}
+                {{ form.first_name.label_tag }}
+                {{ form.first_name }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.last_name.errors }}
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
+            </div>
+        
+            <div class="fieldWrapper">
+                {{ form.password1.errors }}
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.password2.errors }}
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+            </div>
 
-{% endif %}
+            <div class="fieldWrapper">
+                <input type="submit" value="Zarejestruj się">
+            </div>
+        
+        </form>
+    </div>
+    <div class="registerRight">
+            <div class="whyRegister">
+                <div class="whyRegisterHeader">
+                    <p>Dlaczego warto założyć u nas konto?</p>
+                </div>
+                <div class="whyRegisterItems">
+                    <div class="whyRegisterRow">
+                        <div class="whyRegisteritem">Test</div>
+                        <div class="whyRegisteritem">Test2</div>
+                    </div>
+                    <div class="whyRegisterRow">
+                        <div class="whyRegisteritem">Test3</div>
+                        <div class="whyRegisteritem">Test4</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
 
-<form action="{% url 'SignupPage' %}" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
 
-    <input type="submit" value="Zarejestruj się">
-</form>
 {% endblock %}

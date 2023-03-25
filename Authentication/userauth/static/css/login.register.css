@@ -1,19 +1,54 @@
-body div.containerItems form div.loginFormMain {
-  flex-direction: column;
+body div.containerItems {
+  width: 100%;
 }
-body div.containerItems form div.loginFormMain div.loginFormHeader h1 {
-  font-size: 20px;
-}
-body div.containerItems form div.registerFormMain div.registerFormItems div.registerFormItem {
+body div.containerItems div.registerFormMainContainer {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+body div.containerItems div.registerFormMainContainer div.registerLeft {
+  width: 40%;
+  display: flex;
+}
+body div.containerItems div.registerFormMainContainer div.registerLeft form {
+  width: 100%;
+}
+body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 10px;
+  width: 90%;
+}
+body div.containerItems div.registerFormMainContainer div.registerLeft form.registerForm div.fieldWrapper input {
+  padding: 5px;
+  border-radius: 8px;
+  height: 40px;
+  border: 1px solid gray;
+  width: 90%;
+}
+body div.containerItems div.registerFormMainContainer div.registerRight {
+  width: 40%;
+  display: flex;
   align-items: center;
 }
-body div.containerItems form div.registerFormMain div.registerFormItems div.registerFormItem label {
+body div.containerItems div.registerFormMainContainer div.registerRight div.whyRegister {
   display: flex;
-  width: 125px;
+  align-items: center;
+  flex-direction: column;
 }
-body div.containerItems form div.registerFormMain div.registerFormItems div.registerFormItem input {
-  height: 40px;
-  padding: 5px;
+body div.containerItems div.registerFormMainContainer div.registerRight div.whyRegister div.whyRegisterItems {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body div.containerItems div.registerFormMainContainer div.registerRight div.whyRegister div.whyRegisterItems div.whyRegisterRow {
+  display: flex;
+  justify-content: space-between;
+}
+body div.containerItems div.registerFormMainContainer div.registerRight div.whyRegister div.whyRegisterItems div.whyRegisterRow div.whyRegisteritem {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
 }
