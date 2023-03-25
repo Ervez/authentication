@@ -33,15 +33,21 @@ function accBoxMouseListener() {
 function bindInputRegisterForm(){
     $( ".registerForm .fieldWrapper input" ).each(function() {
         $(this).on('click', function(){
-            $(this).closest('.fieldWrapper').children('label').addClass( "labelOnFocus" );
-            $(this).closest('.fieldWrapper').children('label').removeClass("labelNoFocus");
-                $(this).focusout(function(){
-                    if(!$(this).val()){
-                        $(this).closest('.fieldWrapper').children('label').addClass( "labelNoFocus" );
-                        $(this).closest('.fieldWrapper').children('label').removeClass("labelOnFocus");
-                    }
-                });
-
+            inputRegisterFormAnimation(this)
         });
+        $(this).focus(function() {
+            inputRegisterFormAnimation(this)
+          });
       });
+}
+
+function inputRegisterFormAnimation(element){
+    $(element).closest('.fieldWrapper').children('label').addClass( "labelOnFocus" );
+    $(element).closest('.fieldWrapper').children('label').removeClass("labelNoFocus");
+        $(element).focusout(function(){
+            if(!$(element).val()){
+                $(element).closest('.fieldWrapper').children('label').addClass( "labelNoFocus" );
+                $(element).closest('.fieldWrapper').children('label').removeClass("labelOnFocus");
+            }
+        });
 }
